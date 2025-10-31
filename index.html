@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fashion App Demo</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/splash_animation.css">
+</head>
+<body>
+  <div id="splash" class="splash">
+    <div class="splash-content">
+      <img src="assets/logo.svg" alt="logo" class="splash-logo">
+      <h1>Fashion App Demo</h1>
+      <p class="tagline">Shop the Latest Styles</p>
+    </div>
+  </div>
+
+  <header class="topbar" id="topbar" style="display:none;">
+    <div class="brand">
+      <img src="assets/favicon.svg" class="logo" alt="logo">
+      <div>
+        <h1 id="app-name">Fashion App Demo</h1>
+        <p id="welcome-banner" class="banner">Shop the Latest Styles</p>
+      </div>
+    </div>
+    <div class="actions">
+      <select id="currency">
+        <option value="NGN">₦ Naira</option>
+        <option value="USD">$ USD</option>
+        <option value="EUR">€ EUR</option>
+      </select>
+      <button id="install-btn" class="btn small" style="display:none">Install</button>
+    </div>
+  </header>
+
+  <main id="product-list" class="grid" style="display:none;">
+    <p class="loading">No products yet — add items via /data/products.json</p>
+  </main>
+
+  <footer class="footer" style="display:none;">
+    <small id="footer-credit">Developed by Jane Emmanuel</small>
+  </footer>
+
+  <script src="app.js" defer></script>
+  <script>
+    if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
+  </script>
+</body>
+</html>
